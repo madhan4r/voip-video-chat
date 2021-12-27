@@ -1,8 +1,18 @@
 <template>
-  <div class="home">
-    <button @click="navigateTo('/voice')">Voice</button>
-    <button @click="navigateTo('/video')">Video</button>
-    <button @click="navigateTo('/chat')">Chat</button>
+  <div class="home mt-5 text-center">
+    <CButton
+      class="btn-primary"
+      style="margin-right: 10px"
+      @click="navigateTo('/voice')"
+      >Voice
+    </CButton>
+    <CButton
+      class="btn-secondary"
+      style="margin-right: 10px"
+      @click="navigateTo('/video')"
+      >Video
+    </CButton>
+    <CButton class="btn-success" @click="navigateTo('/chat')">Chat</CButton>
   </div>
 </template>
 

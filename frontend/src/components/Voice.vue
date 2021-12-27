@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="text-align: left">
+    <div class="mt-3">
       <input type="text" placeholder="client name" v-model="client_name" />
       <button @click="getToken()">get token</button>
     </div>
@@ -50,7 +50,7 @@ export default {
   created() {
     // When a user is about to transition away from this page,
     // disconnect from the call.
-    window.addEventListener("beforeunload", this.hangUp);          
+    window.addEventListener("beforeunload", this.hangUp);
   },
   methods: {
     async getToken() {
@@ -60,7 +60,7 @@ export default {
           `http://localhost/api/v1/communication/token?identity=${this.client_name}`
         )
         .then((res) => {
-          this.log("Access Token Recieved...");
+          this.log("Access Token Received...");
           this.token = res.data;
           this.device = new Device(this.token.token, {
             closeProtection: true,
